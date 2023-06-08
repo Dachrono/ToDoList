@@ -1,5 +1,5 @@
 .hello {
-    color: rgb(38, 0, 255);
-    background: url('./pics/trash.png');
-    background-repeat: no-repeat;
-  }
+  color: rgb(38, 0, 255);
+  background: url('./pics/trash.png');
+  background-repeat: no-repeat;
+}
