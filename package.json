@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "a simple HTML list of To Do tasks.",
   "private": true,
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
