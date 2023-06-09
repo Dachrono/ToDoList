@@ -7,7 +7,7 @@ function addNewTask(newtask) {
   taskList = taskList.concat(newtask);
   localStorage.setItem('taskList', JSON.stringify(taskList));
   html.htmlLiTask(newtask.description, newtask.index);
-  // html.emptyMessage();
+  html.emptyMessage();
 }
 
 export const addtask = () => {
@@ -16,7 +16,7 @@ export const addtask = () => {
   if (storageAvailable('localStorage')) {
     const newtask = {
       completed: false,
-      index: `task${taskList.length}`,
+      index: taskList.length,
       description: task.value,
     };
 
