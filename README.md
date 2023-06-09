@@ -71,7 +71,7 @@
 </details>
 
 <details>
-  <summary>Webpack</summary>
+  <summary>Webpack.</summary>
   <ul>
     <li>I use web pack in this project </li>
   </ul>
