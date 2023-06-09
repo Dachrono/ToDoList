@@ -1,49 +1,38 @@
 "use strict";
 (self["webpackChunktodolist"] = self["webpackChunktodolist"] || []).push([["storage"],{
 
-/***/ "./src/Modules/storage.js":
-/*!********************************!*\
-  !*** ./src/Modules/storage.js ***!
-  \********************************/
+/***/ "./src/Modules/taskList.js":
+/*!*********************************!*\
+  !*** ./src/Modules/taskList.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ storageAvailable)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function storageAvailable(type) {
-  let storage;
-  try {
-    storage = window[type];
-    const x = '__storage_test__';
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  } catch (error) {
-    return (
-      error instanceof DOMException
-        // everything except Firefox
-        && (error.code === 22
-          // Firefox
-          || error.code === 1014
-          // test name field too, because code might not be present
-          // everything except Firefox
-          || error.name === 'QuotaExceededError'
-          // Firefox
-          || error.name === 'NS_ERROR_DOM_QUOTA_REACHED')
-        // acknowledge QuotaExceededError only if there's something already stored
-        && storage
-        && storage.length !== 0
-    );
-  }
-}
+const taskList = [
+  {
+    description: 'repair my code',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'check de change required',
+    completed: false,
+    index: 1,
+  },
+];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskList);
+
 
 /***/ })
 
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__("./src/Modules/storage.js"));
+/******/ var __webpack_exports__ = (__webpack_exec__("./src/Modules/taskList.js"));
 /******/ }
 ]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RvcmFnZS5idW5kbGUuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQUFlO0FBQ2Y7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxJQUFJO0FBQ0o7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3RvZG9saXN0Ly4vc3JjL01vZHVsZXMvc3RvcmFnZS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBzdG9yYWdlQXZhaWxhYmxlKHR5cGUpIHtcclxuICBsZXQgc3RvcmFnZTtcclxuICB0cnkge1xyXG4gICAgc3RvcmFnZSA9IHdpbmRvd1t0eXBlXTtcclxuICAgIGNvbnN0IHggPSAnX19zdG9yYWdlX3Rlc3RfXyc7XHJcbiAgICBzdG9yYWdlLnNldEl0ZW0oeCwgeCk7XHJcbiAgICBzdG9yYWdlLnJlbW92ZUl0ZW0oeCk7XHJcbiAgICByZXR1cm4gdHJ1ZTtcclxuICB9IGNhdGNoIChlcnJvcikge1xyXG4gICAgcmV0dXJuIChcclxuICAgICAgZXJyb3IgaW5zdGFuY2VvZiBET01FeGNlcHRpb25cclxuICAgICAgICAvLyBldmVyeXRoaW5nIGV4Y2VwdCBGaXJlZm94XHJcbiAgICAgICAgJiYgKGVycm9yLmNvZGUgPT09IDIyXHJcbiAgICAgICAgICAvLyBGaXJlZm94XHJcbiAgICAgICAgICB8fCBlcnJvci5jb2RlID09PSAxMDE0XHJcbiAgICAgICAgICAvLyB0ZXN0IG5hbWUgZmllbGQgdG9vLCBiZWNhdXNlIGNvZGUgbWlnaHQgbm90IGJlIHByZXNlbnRcclxuICAgICAgICAgIC8vIGV2ZXJ5dGhpbmcgZXhjZXB0IEZpcmVmb3hcclxuICAgICAgICAgIHx8IGVycm9yLm5hbWUgPT09ICdRdW90YUV4Y2VlZGVkRXJyb3InXHJcbiAgICAgICAgICAvLyBGaXJlZm94XHJcbiAgICAgICAgICB8fCBlcnJvci5uYW1lID09PSAnTlNfRVJST1JfRE9NX1FVT1RBX1JFQUNIRUQnKVxyXG4gICAgICAgIC8vIGFja25vd2xlZGdlIFF1b3RhRXhjZWVkZWRFcnJvciBvbmx5IGlmIHRoZXJlJ3Mgc29tZXRoaW5nIGFscmVhZHkgc3RvcmVkXHJcbiAgICAgICAgJiYgc3RvcmFnZVxyXG4gICAgICAgICYmIHN0b3JhZ2UubGVuZ3RoICE9PSAwXHJcbiAgICApO1xyXG4gIH1cclxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RvcmFnZS5idW5kbGUuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxHQUFHO0FBQ0g7QUFDQTtBQUNBO0FBQ0E7QUFDQSxHQUFHO0FBQ0g7QUFDQTtBQUNBLGlFQUFlLFFBQVEsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3RvZG9saXN0Ly4vc3JjL01vZHVsZXMvdGFza0xpc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgdGFza0xpc3QgPSBbXHJcbiAge1xyXG4gICAgZGVzY3JpcHRpb246ICdyZXBhaXIgbXkgY29kZScsXHJcbiAgICBjb21wbGV0ZWQ6IGZhbHNlLFxyXG4gICAgaW5kZXg6IDAsXHJcbiAgfSxcclxuICB7XHJcbiAgICBkZXNjcmlwdGlvbjogJ2NoZWNrIGRlIGNoYW5nZSByZXF1aXJlZCcsXHJcbiAgICBjb21wbGV0ZWQ6IGZhbHNlLFxyXG4gICAgaW5kZXg6IDEsXHJcbiAgfSxcclxuXTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IHRhc2tMaXN0O1xyXG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=
