@@ -1,28 +1,32 @@
+// eslint-disable-next-line import/no-cycle
+import trash from './removeTask.js';
 import trashIcon from '../pics/trash.png';
 
-export const emptyMessage = (taskList) => {
+export const emptyMessage = () => {
   const message = document.querySelector('.message');
 
-  if (taskList === '[]'
-        || taskList === undefined) {
+  if (localStorage.taskList === '[]'
+        || localStorage.taskList === undefined) {
     message.style.display = 'block';
   } else {
     message.style.display = 'none';
   }
 };
 
-export const htmlLiTask = (task, id) => {
+export const htmlLiTask = (task, index) => {
   const ulContainer = document.getElementById('listTask');
   ulContainer.insertAdjacentHTML(
     'beforeend',
     `<li>
-      <input class="radio" id="radio_${id}" type="radio">
+      <input class="radio" type="radio">
       <p>${task}</p>
-      <a class="remove"><img id="trash" alt="trash"></a>
+      <a class="remove" id="${index}"><img id="trash" alt="trash"></a>
     </li>`,
   );
   const img3 = document.querySelectorAll('#trash');
   img3.forEach((item) => {
     item.src = trashIcon;
   });
+  trash();
+  emptyMessage();
 };
