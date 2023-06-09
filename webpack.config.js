@@ -5,9 +5,9 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    html: './src/Modules/htmlInject.js',
-    loader: './src/Modules/taskTemplateLoder.js',
-    storage: './src/Modules/taskList.js',
+    htmlInject: './src/Modules/htmlInject.js',
+    taskTemplateLoder: './src/Modules/taskTemplateLoder.js',
+    taskList: './src/Modules/taskList.js',
   },
   devtool: 'inline-source-map',
   devServer: {
