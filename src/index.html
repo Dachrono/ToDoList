@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
-    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="list">
         <div class="title">
             <p>Today´s To Do</p>
-            <a href="reload"><img src="./pics/reload.png" alt="Reload"></a>
+            <a href="reload"><img id="reload" alt="Reload"></a>
         </div>
         <div class="newTask">
             <input id="inputTask" type="text" placeholder="Add to your list..."/>
-            <img src="./pics/enter.png" alt="Enter">
+            <img id="enter" alt="Enter">
         </div>
         <div class="message">
             <p>Congrats!! you do not have task!</p>
@@ -30,6 +29,9 @@
 
 </body>
 
-<script type="module" src="./index.js"></script>
-<script type="module" src="./Modules/add.js"></script>
+<script type="module" src="./index.bundle.js"></script>
+<script type="module" src="./add.bundle.js"></script>
+<script type="module" src="./html.bundle.js"></script>
+<script type="module" src="./loader.bundle.js"></script>
+<script type="module" src="./storage.bundle.js"></script>
 </html>

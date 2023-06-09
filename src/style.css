@@ -64,8 +64,8 @@ body {
 }
 
 .tasks {
-  width: 93%;
-  padding: 0 0 0 0;
+  width: 90%;
+  padding: 0 10px 0 10px;
   background-color: #fff;
   border-bottom: 2px solid #d1d1d1;
   box-shadow: 0 5px 8px #00000086;

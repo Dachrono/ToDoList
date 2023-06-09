@@ -8,7 +8,7 @@ export default function loader() {
     const arr = JSON.parse(localStorage.taskList);
     const arrLength = JSON.parse(localStorage.taskList).length;
     for (let i = 0; i < arrLength; i += 1) {
-      html.htmlLiTask(arr[i].task);
+      html.htmlLiTask(arr[i].description);
     }
     html.emptyMessage();
   }

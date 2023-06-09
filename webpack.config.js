@@ -6,6 +6,10 @@ module.exports = {
   entry: {
     index: './src/index.js',
     print: './src/print.js',
+    add: './src/Modules/add.js',
+    html: './src/Modules/html.js',
+    loader: './src/Modules/loader.js',
+    storage: './src/Modules/storage.js',
   },
   devtool: 'inline-source-map',
   devServer: {
