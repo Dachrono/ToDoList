@@ -1,28 +1,16 @@
-import _ from 'lodash';
-import printMe from './print.js';
-import './style.css';
-import Icon from './pics/trash.png';
+// import _ from './lodash';
+import loader from './Modules/loader.js';
+import { addtask } from './Modules/add.js';
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+const message = document.querySelector('.message');
+message.style.display = 'none';
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+loader();
 
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-  return element;
-}
-
-document.body.appendChild(component());
+const task = document.getElementById('inputTask');
+task.addEventListener('keydown', (e) => {
+  if (e.keyCode === 13) {
+    addtask();
+    task.value = '';
+  }
+});
