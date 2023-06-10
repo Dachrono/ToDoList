@@ -1,16 +1,16 @@
-// import _ from './lodash';
-import loader from './Modules/loader.js';
-import { addtask } from './Modules/add.js';
+import './style.css';
+import rel from './pics/reload.png';
+import ent from './pics/enter.png';
+import taskList from './Modules/taskList.js';
+import loader from './Modules/taskTemplateLoder.js';
 
 const message = document.querySelector('.message');
 message.style.display = 'none';
 
-loader();
+const img = document.getElementById('reload');
+img.src = rel;
 
-const task = document.getElementById('inputTask');
-task.addEventListener('keydown', (e) => {
-  if (e.keyCode === 13) {
-    addtask();
-    task.value = '';
-  }
-});
+const img2 = document.getElementById('enter');
+img2.src = ent;
+
+loader(taskList);

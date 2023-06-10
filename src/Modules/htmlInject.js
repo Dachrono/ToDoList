@@ -1,8 +1,10 @@
-export const emptyMessage = () => {
+import trashIcon from '../pics/trash.png';
+
+export const emptyMessage = (taskList) => {
   const message = document.querySelector('.message');
 
-  if (localStorage.taskList === []
-        || localStorage.taskList === undefined) {
+  if (taskList === '[]'
+        || taskList === undefined) {
     message.style.display = 'block';
   } else {
     message.style.display = 'none';
@@ -16,8 +18,11 @@ export const htmlLiTask = (task, id) => {
     `<li>
       <input class="radio" id="radio_${id}" type="radio">
       <p>${task}</p>
-      <a href=""><img src="./pics/trash.png" alt="trash"></a>
+      <a class="remove"><img id="trash" alt="trash"></a>
     </li>`,
   );
-  emptyMessage();
+  const img3 = document.querySelectorAll('#trash');
+  img3.forEach((item) => {
+    item.src = trashIcon;
+  });
 };
