@@ -10,12 +10,12 @@ export const emptyMessage = () => {
   }
 };
 
-export const htmlLiTask = (task, index) => {
+export const htmlLiTask = (task, index, completed) => {
   const ulContainer = document.getElementById('listTask');
   ulContainer.insertAdjacentHTML(
     'beforeend',
     `<li>
-      <input class="radio" type="radio">
+      <input class="checkbox" type="checkbox" data-id="${index}" ${completed ? 'checked' : ''}>
       <p class="pt">${task}</p>
       <a class="remove" id="${(index) + 1}"><img class="trash" alt="trash"></a>
     </li>`,

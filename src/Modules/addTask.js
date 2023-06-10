@@ -7,7 +7,7 @@ let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
 function addNewTask(newtask) {
   taskList = taskList.concat(newtask);
   localStorage.setItem('taskList', JSON.stringify(taskList));
-  html.htmlLiTask(newtask.description, newtask.index);
+  html.htmlLiTask(newtask.description, newtask.index, newtask.completed);
   html.emptyMessage();
 }
 
