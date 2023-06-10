@@ -1,4 +1,3 @@
-// import _ from './lodash';
 import './style.css';
 import rel from './pics/reload.png';
 import ent from './pics/enter.png';
