@@ -36,7 +36,7 @@
 
 # 📖 To do list <a name="about-project"></a>
 
-**To do list** is a cool web app to can keep your tasks up to date 
+**To do list** is a cool web app to can keep your tasks up to date. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
