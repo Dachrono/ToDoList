@@ -20,6 +20,10 @@ body {
   pointer-events: none;
 }
 
+/* .checkbox {
+  pointer-events: none;
+} */
+
 .title {
   background-color: #fff;
   width: 90%;

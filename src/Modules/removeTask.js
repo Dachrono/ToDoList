@@ -1,6 +1,6 @@
 import { emptyMessage } from './htmlInject.js';
 
-function taskUpdate(list) {
+export function taskUpdate(list) {
   const newArrList = list.map((object, dir) => ({
     completed: object.completed,
     description: object.description,
