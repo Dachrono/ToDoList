@@ -5,8 +5,7 @@ import trashIcon from '../pics/trash.png';
 export const emptyMessage = () => {
   const message = document.querySelector('.message');
 
-  if (localStorage.taskList === '[]'
-        || localStorage.taskList === undefined) {
+  if (!localStorage.taskList || localStorage.taskList === '[]') {
     message.style.display = 'block';
   } else {
     message.style.display = 'none';
