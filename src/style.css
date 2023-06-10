@@ -16,6 +16,10 @@ body {
   flex-direction: column;
 }
 
+.trash {
+  pointer-events: none;
+}
+
 .title {
   background-color: #fff;
   width: 90%;

@@ -1,8 +1,18 @@
+// eslint-disable-next-line import/no-cycle
+import trash from './removeTask.js';
 import { htmlLiTask, emptyMessage } from './htmlInject.js';
 
-export default function loader(taskList) {
-  for (let i = 0; i < taskList.length; i += 1) {
-    htmlLiTask(taskList[i].description, taskList[i].index);
+export default function loader() {
+  if (!localStorage.taskList) {
+    emptyMessage();
+  } else {
+    document.getElementById('listTask').innerHTML = '';
+    const arr = JSON.parse(localStorage.getItem('taskList'));
+    const arrLength = arr.length;
+    for (let i = 0; i < arrLength; i += 1) {
+      htmlLiTask(arr[i].description, i);
+    }
+    trash();
+    emptyMessage();
   }
-  emptyMessage(taskList);
 }
