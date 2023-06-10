@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+<script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+<body>
+    <div class="list">
+        <div class="title">
+            <p>Todays To Do</p>
+            <a href="reload"><img id="reload" alt="Reload"></a>
+        </div>
+        <div class="newTask">
+            <input id="inputTask" type="text" placeholder="Add to your list..."/>
+            <img id="enter" alt="Enter">
+        </div>
+        <div class="message">
+            <p>Congrats!! you do not have task!</p>
+        </div>
+        <div class="tasks">
+            <ul id="listTask">
+            </ul>
+        </div>
+        <div class="complete">
+            <button class="complete" type="button">Clear all completed</button>
+        </div>
+    </div>
+
+</body>
+</html>
