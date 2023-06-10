@@ -1,12 +1,10 @@
-// eslint-disable-next-line import/no-cycle
 import { emptyMessage } from './htmlInject.js';
-import loader from './taskTemplateLoder.js';
 
 function taskUpdate(list) {
   const newArrList = list.map((object, dir) => ({
     completed: object.completed,
     description: object.description,
-    index: dir,
+    index: (dir) + 1,
   }));
   return newArrList;
 }
@@ -16,7 +14,7 @@ function removeData(id) {
   const hell = taskList.filter((task) => task.index !== id);
   taskList = taskUpdate(hell);
   localStorage.setItem('taskList', JSON.stringify(taskList));
-  loader();
+  window.location.reload();
 }
 
 export default function trash() {

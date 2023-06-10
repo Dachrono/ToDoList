@@ -16,8 +16,8 @@ export const addtask = () => {
   if (storageAvailable('localStorage')) {
     const newtask = {
       completed: false,
-      index: taskList.length,
       description: task.value,
+      index: (taskList.length) + 1,
     };
     addNewTask(newtask);
     loader();

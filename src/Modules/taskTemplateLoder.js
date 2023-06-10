@@ -3,7 +3,7 @@ import trash from './removeTask.js';
 import * as html from './htmlInject.js';
 
 export default function loader() {
-  if (!localStorage.taskList || localStorage.taskList === '[]') {
+  if (!localStorage.taskList) {
     html.emptyMessage();
   } else {
     document.getElementById('listTask').innerHTML = '';
