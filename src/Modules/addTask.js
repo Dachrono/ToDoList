@@ -1,5 +1,6 @@
 import storageAvailable from './storage.js';
 import * as html from './htmlInject.js';
+import loader from './taskTemplateLoder.js';
 
 let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
@@ -12,15 +13,14 @@ function addNewTask(newtask) {
 
 export const addtask = () => {
   const task = document.getElementById('inputTask');
-
   if (storageAvailable('localStorage')) {
     const newtask = {
       completed: false,
       index: taskList.length,
       description: task.value,
     };
-
     addNewTask(newtask);
+    loader();
   }
 };
 
