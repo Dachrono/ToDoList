@@ -37,8 +37,14 @@ export const htmlLiTask = (task, index, completed) => {
     });
   });
   editinput.addEventListener('focusout', () => {
-    edit(editinput, index);
+    const p = document.createElement('p');
+    p.className = 'pt';
+    const newValue = editinput.value;
+    p.textContent = newValue;
+    edit(newValue, index);
+    editinput.replaceWith(p);
+    window.location.reload();
   });
 
-  emptyMessage();
+  // emptyMessage();
 };
