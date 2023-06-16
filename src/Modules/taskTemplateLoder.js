@@ -13,9 +13,18 @@ export default function loader() {
     for (let i = 0; i < arrLength; i += 1) {
       htmlLiTask(arr[i].description, i, arr[i].completed);
     }
-    radio.box();
+
+    const checkbox = document.querySelectorAll('.checkbox');
+    checkbox.forEach((element) => {
+      element.addEventListener('change', (event) => {
+        const id = Number(event.target.dataset.id);
+        const arrayTaskList = localStorage.getItem('taskList');
+        radio.box(id, arrayTaskList);
+      });
+    });
+
     radio.clear();
     trash();
-    emptyMessage();
+    // emptyMessage();
   }
 }
