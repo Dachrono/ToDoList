@@ -1,14 +1,10 @@
 import { taskUpdate } from './removeTask.js';
 
-export const clear = () => {
-  const butClear = document.querySelector('.complete');
-  butClear.addEventListener('click', () => {
-    let taskList = JSON.parse(localStorage.getItem('taskList'));
-    const hell = taskList.filter((task) => task.completed === false);
-    taskList = taskUpdate(hell);
-    localStorage.setItem('taskList', JSON.stringify(taskList));
-    window.location.reload();
-  });
+export const clear = (taskList) => {
+  const hell = taskList.filter((task) => task.completed === false);
+  taskList = taskUpdate(hell);
+  localStorage.setItem('taskList', JSON.stringify(taskList));
+  return taskList;
 };
 
 export const box = (id, arrayTaskList) => {

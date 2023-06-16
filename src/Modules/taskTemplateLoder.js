@@ -23,7 +23,13 @@ export default function loader() {
       });
     });
 
-    radio.clear();
+    const butClear = document.querySelector('.complete');
+    butClear.addEventListener('click', () => {
+      const taskList = JSON.parse(localStorage.getItem('taskList'));
+      radio.clear(taskList);
+      window.location.reload();
+    });
+
     trash();
     // emptyMessage();
   }
