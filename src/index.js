@@ -18,7 +18,7 @@ loader();
 const task = document.getElementById('inputTask');
 task.addEventListener('keydown', (e) => {
   if (e.keyCode === 13) {
-    addtask();
+    addtask(task);
     task.value = '';
   }
 });

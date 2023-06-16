@@ -1,4 +1,4 @@
-import { emptyMessage } from './htmlInject.js';
+// import { emptyMessage } from './htmlInject.js';
 
 export function taskUpdate(list) {
   const newArrList = list.map((object, dir) => ({
@@ -9,12 +9,11 @@ export function taskUpdate(list) {
   return newArrList;
 }
 
-function removeData(id) {
-  let taskList = JSON.parse(localStorage.getItem('taskList'));
+export function removeData(taskList, icon, id) {
   const hell = taskList.filter((task) => task.index !== id);
   taskList = taskUpdate(hell);
+  icon.parentElement.remove();
   localStorage.setItem('taskList', JSON.stringify(taskList));
-  window.location.reload();
 }
 
 export default function trash() {
@@ -22,9 +21,10 @@ export default function trash() {
   trash.forEach((icon) => {
     icon.addEventListener('click', (event) => {
       const id = Number(event.target.id);
-      removeData(id);
-      icon.parentElement.remove();
-      emptyMessage();
+      const taskList = JSON.parse(localStorage.getItem('taskList'));
+      removeData(taskList, icon, id);
+      window.location.reload();
+      // emptyMessage();
     });
   });
 }
