@@ -1,7 +1,3 @@
-// test('hello world', () => {
-//   const message = 'hello world 2';
-//   expect(message).toMatch('hello world 2');
-// });
 import { removeData } from '../Modules/removeTask.js';
 import { addtask } from '../Modules/addTask.js';
 
