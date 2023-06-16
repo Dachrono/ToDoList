@@ -1,6 +1,7 @@
 import { removeData } from '../Modules/removeTask.js';
 import { addtask } from '../Modules/addTask.js';
 import edit from '../Modules/editDescrip.js';
+import { box } from '../Modules/radioInp.js';
 
 describe('add new task', () => {
   test('add new list task', () => {
@@ -118,5 +119,39 @@ describe('update value', () => {
     descriptive[1].textContent = 'someone other value';
     const anotherhell = edit(descriptive[1].textContent, 1);
     expect(anotherhell).toMatch('someone other value');
+  });
+});
+
+describe('complete status', () => {
+  test('check complete status', () => {
+    const arrtemp = [
+      {
+        completed: false,
+        description: 'test1',
+        index: 1,
+      },
+      {
+        completed: false,
+        description: 'test2',
+        index: 2,
+      },
+    ];
+
+    const arrtemp2 = [
+      {
+        completed: false,
+        description: 'test1',
+        index: 1,
+      },
+      {
+        completed: true,
+        description: 'test2',
+        index: 2,
+      },
+    ];
+
+    const retArray = box(1, arrtemp);
+    // localStorage.setItem('taskList', JSON.stringify(retArray));
+    expect(retArray).toEqual(arrtemp2);
   });
 });
