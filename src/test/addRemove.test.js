@@ -1,7 +1,7 @@
 import { removeData } from '../Modules/removeTask.js';
 import { addtask } from '../Modules/addTask.js';
 import edit from '../Modules/editDescrip.js';
-import { box } from '../Modules/radioInp.js';
+import { box, clear } from '../Modules/radioInp.js';
 
 describe('add new task', () => {
   test('add new list task', () => {
@@ -67,17 +67,17 @@ describe('remove old task', () => {
             <ul id="listTask">
                 <li>
                  <input class="checkbox" type="checkbox" data-id="1">
-                 <p class="pt">hell</p>
+                 <p class="pt">task 1</p>
                  <a class="remove" id="1"><img class="trash" alt="trash"></a>
                 </li>
                 <li>
                  <input class="checkbox" type="checkbox" data-id="2">
-                 <p class="pt">hell lvl 2</p>
+                 <p class="pt">task 2</p>
                  <a class="remove" id="2"><img class="trash" alt="trash"></a>
                 </li>
                 <li>
                  <input class="checkbox" type="checkbox" data-id="3">
-                 <p class="pt">hell lvl 3</p>
+                 <p class="pt">task 3</p>
                  <a class="remove" id="3"><img class="trash" alt="trash"></a>
                 </li>
             </ul>
@@ -100,25 +100,25 @@ describe('update value', () => {
             <ul id="listTask">
                 <li>
                  <input class="checkbox" type="checkbox" data-id="1">
-                 <p class="pt">hell</p>
+                 <p class="pt">task 1</p>
                  <a class="remove" id="1"><img class="trash" alt="trash"></a>
                 </li>
                 <li>
                  <input class="checkbox" type="checkbox" data-id="2">
-                 <p class="pt">hell lvl 2</p>
+                 <p class="pt">task 2</p>
                  <a class="remove" id="2"><img class="trash" alt="trash"></a>
                 </li>
                 <li>
                  <input class="checkbox" type="checkbox" data-id="3">
-                 <p class="pt">hell lvl 3</p>
+                 <p class="pt">task 3</p>
                  <a class="remove" id="3"><img class="trash" alt="trash"></a>
                 </li>
             </ul>
         `;
-    const descriptive = document.querySelectorAll('.pt');
-    descriptive[1].textContent = 'someone other value';
-    const anotherhell = edit(descriptive[1].textContent, 1);
-    expect(anotherhell).toMatch('someone other value');
+    const taskDesc = document.querySelectorAll('.pt');
+    taskDesc[1].textContent = 'someone other value';
+    const taskText = edit(taskDesc[1].textContent, 1);
+    expect(taskText).toMatch('someone other value');
   });
 });
 
@@ -151,7 +151,49 @@ describe('complete status', () => {
     ];
 
     const retArray = box(1, arrtemp);
-    // localStorage.setItem('taskList', JSON.stringify(retArray));
+    expect(retArray).toEqual(arrtemp2);
+  });
+});
+
+describe('clear task', () => {
+  test('check clear status', () => {
+    const arrtemp = [
+      {
+        completed: false,
+        description: 'test1',
+        index: 1,
+      },
+      {
+        completed: true,
+        description: 'test2',
+        index: 2,
+      },
+      {
+        completed: false,
+        description: 'test3',
+        index: 3,
+      },
+      {
+        completed: true,
+        description: 'test4',
+        index: 4,
+      },
+    ];
+
+    const arrtemp2 = [
+      {
+        completed: false,
+        description: 'test1',
+        index: 1,
+      },
+      {
+        completed: false,
+        description: 'test3',
+        index: 2,
+      },
+    ];
+
+    const retArray = clear(arrtemp);
     expect(retArray).toEqual(arrtemp2);
   });
 });
